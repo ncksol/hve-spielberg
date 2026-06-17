@@ -1,0 +1,54 @@
+AUDIO EVIDENCE — hve-spielberg Phase 5 mix, BEFORE vs AFTER
+Generated Wed 17 Jun 2026 13:48:28 BST
+VO: macOS 'say' (Samantha), 26s, normalized to -16 LUFS (pipeline Step 5.3).
+Music: REAL track used by the skill example — 'Unpretentious Reveal' by SondreDrakensson,
+       Freesound CC-BY (https://freesound.org/s/529380/).
+
+== INTEGRATED LOUDNESS / TRUE PEAK (ffmpeg ebur128) ==
+-- 01-BEFORE-old-mix.mp3 --
+    I:         -15.9 LUFS
+    LRA:         4.3 LU
+    Peak:       -0.3 dBFS
+-- 02-AFTER-new-mix.mp3 --
+    I:         -15.4 LUFS
+    LRA:         4.5 LU
+    Peak:       -3.8 dBFS
+
+Guide master target: ~-16 LUFS integrated, true peak <= -1 dBTP.
+  BEFORE true peak -0.3 dBFS  -> BREACHES the -1 dBTP ceiling.
+  AFTER  true peak -3.8 dBFS  -> compliant.
+
+== PER-SECOND LEVELS (mean dB) — proves ducking ==
+VO gaps (silence) at ~1s,7s,13s,19s,25s. Watch bed-AFTER drop ~8 dB UNDER speech vs gaps;
+bed-BEFORE stays ~flat (no ducking).
+ sec |       VO |  bedBEFORE | bedAFTERduck
+   0 | -13.3 dB |   -41.7 dB |     -54.7 dB
+   1 | -76.9 dB |   -35.9 dB |     -38.1 dB
+   2 | -21.1 dB |   -29.2 dB |     -31.8 dB
+   3 | -15.3 dB |   -32.1 dB |     -44.4 dB
+   4 | -15.8 dB |   -31.4 dB |     -43.3 dB
+   5 | -16.6 dB |   -30.7 dB |     -43.2 dB
+   6 | -15.6 dB |   -32.8 dB |     -43.6 dB
+   7 | -83.3 dB |   -30.6 dB |     -34.8 dB
+   8 | -25.7 dB |   -27.6 dB |     -33.6 dB
+   9 | -16.2 dB |   -30.4 dB |     -42.8 dB
+  10 | -15.6 dB |   -31.5 dB |     -43.9 dB
+  11 | -16.1 dB |   -32.3 dB |     -43.2 dB
+  12 | -17.4 dB |   -31.7 dB |     -43.9 dB
+  13 | -83.3 dB |   -32.3 dB |     -35.9 dB
+  14 | -19.8 dB |   -31.8 dB |     -36.1 dB
+  15 | -15.2 dB |   -31.6 dB |     -44.8 dB
+  16 | -17.0 dB |   -32.1 dB |     -43.3 dB
+  17 | -14.8 dB |   -31.6 dB |     -44.6 dB
+  18 | -16.2 dB |   -27.8 dB |     -43.9 dB
+  19 | -82.5 dB |   -31.4 dB |     -35.7 dB
+  20 | -23.1 dB |   -31.2 dB |     -34.7 dB
+  21 | -17.0 dB |   -34.3 dB |     -44.4 dB
+  22 | -19.1 dB |   -31.3 dB |     -38.7 dB
+  23 | -17.3 dB |   -34.2 dB |     -47.0 dB
+  24 | -19.8 dB |   -38.5 dB |     -50.5 dB
+  25 | -91.0 dB |   -45.4 dB |     -51.9 dB
+
+== EQ PROOF (mean dB of isolated band in the music bed) ==
+  sub-100Hz_removed_by_highpass      BEFORE -34.6 dB | AFTER -41.2 dB
+  2.5kHz_voice-space_dip             BEFORE -56.6 dB | AFTER -59.5 dB
